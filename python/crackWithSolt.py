@@ -6,6 +6,9 @@ import hashlib
 import sys
 import os
 
+import random
+import time
+
 #####################################################################################
 # Adds colourised notifications to text
 # Colourama is not neccesary for ANSI compliant terminals; however, it will make it work in windows.
@@ -69,6 +72,8 @@ def crackHash():
 		curntLen = len(x)
 		if maxLen < curntLen :
 			maxLen = curntLen
+
+		time.sleep(0.10)
 
 		process(maxLen, x.rstrip())
 		if args[3] == "md5" :
