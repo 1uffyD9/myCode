@@ -1,6 +1,5 @@
 from cmd import Cmd
 from colored import fg, bg, attr, stylize
-import sys
 
 class MyPrompt(Cmd):
 
@@ -36,4 +35,4 @@ if __name__ == '__main__':
         prompt.cmdloop(stylize("Starting prompt for LFI...", starting))
     except KeyboardInterrupt:
         print(stylize("\nGot keyboard interrupt. Exiting...",error))
-        sys.exit(0)
+        raise SystemExit
